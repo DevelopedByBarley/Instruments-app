@@ -1,5 +1,6 @@
 import { BrowserRouter, NavLink, Routes, Route } from "react-router-dom";
 import './App.css';
+import { InstrumentCreatePage } from "./InstrumentCreatePage";
 import { InstrumentListPage } from "./InstrumentListPage";
 import { InstrumentSinglePage } from "./InstrumentSinglePage";
 
@@ -26,7 +27,7 @@ function App() {
       <Routes>
         <Route path="/" element={<InstrumentListPage />}></Route>
         <Route path="/instrument/:instrumentId" element={<InstrumentSinglePage />}></Route>
-        <Route path="/new-instrument" element={"new Instrument"}></Route>
+        <Route path="/new-instrument" element={<InstrumentCreatePage />}></Route>
       </Routes>
 
     </BrowserRouter>
