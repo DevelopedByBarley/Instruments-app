@@ -1,6 +1,7 @@
-import { BrowserRouter, NavLink, Redirect, Route, Switch } from "react-router-dom";
-import logo from './logo.svg';
+import { BrowserRouter, NavLink, Routes, Route } from "react-router-dom";
 import './App.css';
+import { InstrumentListPage } from "./InstrumentListPage";
+import { InstrumentSinglePage } from "./InstrumentSinglePage";
 
 function App() {
   return (
@@ -9,14 +10,25 @@ function App() {
         <div className="collapse navbar-collapse" id="navbarNav">
           <ul className="navbar-nav">
             <li className="nav-item">
-              <span className="nav-link">Hangszerek</span>
+              <NavLink to={'/'} end>
+                <span className="nav-link">Instruments</span>
+              </NavLink>
             </li>
             <li className="nav-item">
-              <span className="nav-link">Új hangszer</span>
+              <NavLink to={'/new-instrument'} activeClassName="active">
+                <span className="nav-link">New instrument</span>
+              </NavLink>hhhhhh
             </li>
           </ul>
         </div>
       </nav>
+
+      <Routes>
+        <Route path="/" element={<InstrumentListPage />}></Route>
+        <Route path="/instrument/:instrumentId" element={<InstrumentSinglePage />}></Route>
+        <Route path="/new-instrument" element={"new Instrument"}></Route>
+      </Routes>
+
     </BrowserRouter>
   );
 }
