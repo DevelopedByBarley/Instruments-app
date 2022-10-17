@@ -18,7 +18,7 @@ function App() {
             <li className="nav-item">
               <NavLink to={'/new-instrument'} activeClassName="active">
                 <span className="nav-link">New instrument</span>
-              </NavLink>hhhhhh
+              </NavLink>
             </li>
           </ul>
         </div>
