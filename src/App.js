@@ -3,6 +3,7 @@ import './App.css';
 import { InstrumentCreatePage } from "./InstrumentCreatePage";
 import { InstrumentListPage } from "./InstrumentListPage";
 import { InstrumentSinglePage } from "./InstrumentSinglePage";
+import { UpdateInstrument } from "./UpdateInstrument";
 
 function App() {
   return (
@@ -28,6 +29,7 @@ function App() {
         <Route path="/" element={<InstrumentListPage />}></Route>
         <Route path="/instrument/:instrumentId" element={<InstrumentSinglePage />}></Route>
         <Route path="/new-instrument" element={<InstrumentCreatePage />}></Route>
+        <Route path="/update-instrument" element={<UpdateInstrument />}></Route>
       </Routes>
 
     </BrowserRouter>

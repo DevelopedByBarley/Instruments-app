@@ -1,10 +1,11 @@
 import { useEffect, useState } from "react";
-import { useParams } from "react-router-dom"
+import { NavLink, useNavigate, useParams } from "react-router-dom"
 
 export function InstrumentSinglePage(props) {
 
   const param = useParams();
   const id = param.instrumentId;
+  const navigate = useNavigate();
 
   const [instrument, setInstrument] = useState({});
   const [isPending, setPending] = useState(false);
@@ -24,6 +25,12 @@ export function InstrumentSinglePage(props) {
       }
     })();
   }, [])
+
+
+  function deleteInstrument() {
+    console.log('Hello');
+  }
+
   return (
 
     <>
@@ -42,6 +49,19 @@ export function InstrumentSinglePage(props) {
                 style={{ maxHeight: "500px" }}
                 src={instrument.imageURL ? instrument.imageURL : "https://via.placeholder.com/400x800"}
               />
+            </div>
+            <div className="btn-container">
+              <button className="btn m-2 btn-danger" onClick={(event) => {
+                event.preventDefault();
+                fetch(`https://kodbazis.hu/api/instruments/${instrument.id}`, {
+                  method: "DELETE",
+                  credentials: "include"
+                })
+                  .then(() => navigate('/'))
+              }}>Delete</button>
+              <NavLink to={'/update-instrument'}>
+                <button className="btn btn-warning">Update</button>
+              </NavLink>
             </div>
           </div>
         )}
