@@ -59,7 +59,7 @@ export function InstrumentSinglePage(props) {
                 })
                   .then(() => navigate('/'))
               }}>Delete</button>
-              <NavLink to={'/update-instrument'}>
+              <NavLink to={`/update-instrument/${instrument.id}`}>
                 <button className="btn btn-warning">Update</button>
               </NavLink>
             </div>

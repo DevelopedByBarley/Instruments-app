@@ -29,7 +29,7 @@ function App() {
         <Route path="/" element={<InstrumentListPage />}></Route>
         <Route path="/instrument/:instrumentId" element={<InstrumentSinglePage />}></Route>
         <Route path="/new-instrument" element={<InstrumentCreatePage />}></Route>
-        <Route path="/update-instrument" element={<UpdateInstrument />}></Route>
+        <Route path="/update-instrument/:instrumentId" element={<UpdateInstrument />}></Route>
       </Routes>
 
     </BrowserRouter>
